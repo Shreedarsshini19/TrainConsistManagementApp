@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.LinkedList;
 
 public class TrainConsistManagementApp {
 
@@ -56,7 +57,33 @@ public class TrainConsistManagementApp {
         bogieIds.add("BG102"); // duplicate
 
         System.out.println("Unique Bogie IDs: " + bogieIds);
+
+        // ================= UC4 START =================
+
+        System.out.println("\n--- Managing Train Order using LinkedList ---");
+
+        LinkedList<String> trainOrder = new LinkedList<>();
+
+// Add bogies
+        trainOrder.add("Engine");
+        trainOrder.add("Sleeper");
+        trainOrder.add("AC");
+        trainOrder.add("Cargo");
+        trainOrder.add("Guard");
+
+        System.out.println("Initial Train Order: " + trainOrder);
+
+// Insert Pantry Car at position 2
+        trainOrder.add(2, "Pantry");
+
+        System.out.println("After adding Pantry at position 2: " + trainOrder);
+
+// Remove first and last
+        trainOrder.removeFirst();
+        trainOrder.removeLast();
+
+        System.out.println("After removing first and last: " + trainOrder);
+
+// ================= UC4 END =================
     }
 }
-
-// ================= UC3 END =================
