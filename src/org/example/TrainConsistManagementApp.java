@@ -174,5 +174,18 @@ public class TrainConsistManagementApp {
         }
 
 // ================= UC9 END =================
+        // ================= UC10 START =================
+
+        System.out.println("\n--- Total Seating Capacity ---");
+
+// Reuse bogieList from UC7
+
+        int totalCapacity = bogieList.stream()
+                .map(b -> b.getCapacity())
+                .reduce(0, Integer::sum);
+
+        System.out.println("Total Seating Capacity: " + totalCapacity);
+
+// ================= UC10 END =================
     }
 }
