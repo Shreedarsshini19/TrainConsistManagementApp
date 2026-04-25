@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TrainConsistManagementApp {
 
@@ -40,5 +42,21 @@ public class TrainConsistManagementApp {
         // ================= UC2 END =================
 
         System.out.println("\nProgram continues...");
+// ================= UC3 START =================
+
+        System.out.println("\n--- Tracking Unique Bogie IDs ---");
+
+        Set<String> bogieIds = new HashSet<>();
+
+// Adding bogie IDs (with duplicates)
+        bogieIds.add("BG101");
+        bogieIds.add("BG102");
+        bogieIds.add("BG103");
+        bogieIds.add("BG101"); // duplicate
+        bogieIds.add("BG102"); // duplicate
+
+        System.out.println("Unique Bogie IDs: " + bogieIds);
     }
 }
+
+// ================= UC3 END =================
