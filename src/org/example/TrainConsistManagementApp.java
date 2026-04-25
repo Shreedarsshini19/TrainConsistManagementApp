@@ -158,5 +158,21 @@ public class TrainConsistManagementApp {
         }
 
 // ================= UC8 END =================
+        // ================= UC9 START =================
+
+        System.out.println("\n--- Grouping Bogies by Type ---");
+
+// Reuse bogieList from UC7
+
+        Map<String, List<Bogie>> groupedBogies = bogieList.stream()
+                .collect(Collectors.groupingBy(Bogie::getName));
+
+        System.out.println("Grouped Bogies:");
+
+        for (Map.Entry<String, List<Bogie>> entry : groupedBogies.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
+// ================= UC9 END =================
     }
 }
