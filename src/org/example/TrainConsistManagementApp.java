@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.LinkedList;
 import java.util.LinkedHashSet;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TrainConsistManagementApp {
 
@@ -104,5 +106,23 @@ public class TrainConsistManagementApp {
         System.out.println("Final Train Formation (No duplicates, ordered): " + trainFormation);
 
 // ================= UC5 END =================
+        // ================= UC6 START =================
+
+        System.out.println("\n--- Bogie Capacity Mapping using HashMap ---");
+
+        HashMap<String, Integer> bogieCapacity = new HashMap<>();
+
+// Add bogie capacities
+        bogieCapacity.put("Sleeper", 72);
+        bogieCapacity.put("AC Chair", 60);
+        bogieCapacity.put("First Class", 40);
+
+// Display using entrySet
+        for (Map.Entry<String, Integer> entry : bogieCapacity.entrySet()) {
+            System.out.println("Bogie: " + entry.getKey() +
+                    " | Capacity: " + entry.getValue());
+        }
+
+// ================= UC6 END =================
     }
 }
