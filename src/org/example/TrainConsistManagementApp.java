@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.LinkedHashSet;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Comparator;
 
 public class TrainConsistManagementApp {
 
@@ -122,7 +123,23 @@ public class TrainConsistManagementApp {
             System.out.println("Bogie: " + entry.getKey() +
                     " | Capacity: " + entry.getValue());
         }
+// ================= UC7 START =================
 
-// ================= UC6 END =================
+        System.out.println("\n--- Sorting Bogies by Capacity ---");
+
+        List<Bogie> bogieList = new ArrayList<>();
+
+// Add bogies
+        bogieList.add(new Bogie("Sleeper", 72));
+        bogieList.add(new Bogie("AC Chair", 60));
+        bogieList.add(new Bogie("First Class", 40));
+
+// Sort using Comparator (ascending)
+        bogieList.sort(Comparator.comparingInt(Bogie::getCapacity));
+
+        System.out.println("Sorted Bogies (by capacity):");
+        for (Bogie b : bogieList) {
+            System.out.println(b);
+        }
     }
 }
