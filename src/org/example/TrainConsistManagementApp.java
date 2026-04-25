@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.LinkedList;
+import java.util.LinkedHashSet;
 
 public class TrainConsistManagementApp {
 
@@ -85,5 +86,23 @@ public class TrainConsistManagementApp {
         System.out.println("After removing first and last: " + trainOrder);
 
 // ================= UC4 END =================
+        // ================= UC5 START =================
+
+        System.out.println("\n--- Train Formation using LinkedHashSet ---");
+
+        LinkedHashSet<String> trainFormation = new LinkedHashSet<>();
+
+// Adding bogies
+        trainFormation.add("Engine");
+        trainFormation.add("Sleeper");
+        trainFormation.add("Cargo");
+        trainFormation.add("Guard");
+
+// Attempt duplicate
+        trainFormation.add("Sleeper"); // duplicate
+
+        System.out.println("Final Train Formation (No duplicates, ordered): " + trainFormation);
+
+// ================= UC5 END =================
     }
 }
