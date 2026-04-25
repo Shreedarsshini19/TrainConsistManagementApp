@@ -9,6 +9,7 @@ import java.util.LinkedHashSet;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class TrainConsistManagementApp {
 
@@ -141,5 +142,21 @@ public class TrainConsistManagementApp {
         for (Bogie b : bogieList) {
             System.out.println(b);
         }
+        // ================= UC8 START =================
+
+        System.out.println("\n--- Filtering Bogies (Capacity > 60) ---");
+
+// Reuse bogieList from UC7
+
+        List<Bogie> filteredBogies = bogieList.stream()
+                .filter(b -> b.getCapacity() > 60)
+                .toList();   // Java 16+ (if error, I’ll fix below 👇)
+
+        System.out.println("Filtered Bogies:");
+        for (Bogie b : filteredBogies) {
+            System.out.println(b);
+        }
+
+// ================= UC8 END =================
     }
 }
